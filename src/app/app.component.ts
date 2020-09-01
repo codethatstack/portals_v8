@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-world-project';
+
+  onActivated(args: ComponentRef<any>): void {
+    console.log('Component Activated', args);
+  }
+
+  onDeactivated(args: ComponentRef<any>): void {
+    console.log('Component Deactivated', args);
+  }
 }
