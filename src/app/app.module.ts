@@ -10,10 +10,10 @@ const PortalModules: ModuleLoaderDef[] = [
     moduleId: 'Foo',
     load: () => import('./foo/foo.module').then(m => m.FooModule)
   },
-  {
-    moduleId: 'Bar',
-    load: () => import('./bar/bar.module').then(m => m.BarModule)
-  },
+  // {
+  //   moduleId: 'Bar',
+  //   load: () => import('./bar/bar.module').then(m => m.BarModule)
+  // },
   {
     moduleId: 'Baz',
     load: () => import('./baz/baz.module').then(m => m.BazModule)
@@ -25,14 +25,22 @@ const PortalComponents: ComponentRegistryItem[] = [
     componentId: 'FooComponent',
     moduleId: 'Foo'
   },
-  {
-    componentId: 'BarComponent',
-    moduleId: 'Bar'
-  },
+  // {
+  //   componentId: 'BarComponent',
+  //   moduleId: 'Bar'
+  // },
   {
     componentId: 'BazComponent',
     moduleId: 'Baz'
+  },
+  {
+    componentId: 'BarComponent',
+    moduleId: {
+      name: 'BarModule',
+      path: 'src/app/bar/bar.module'
+    }
   }
+
 ];
 
 
